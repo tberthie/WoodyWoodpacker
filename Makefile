@@ -6,7 +6,7 @@
 #    By: tberthie <tberthie@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/02/20 22:18:00 by tberthie          #+#    #+#              #
-#    Updated: 2017/11/06 19:07:19 by tberthie         ###   ########.fr        #
+#    Updated: 2017/11/08 02:27:27 by tberthie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,10 +29,10 @@ objs/%.o: srcs/%.c
 clean:
 	make -C libft clean
 	rm -rf objs
+	rm -f woody
 
 fclean: clean
 	rm -f libft/libft.a
 	rm -f $(NAME)
-	rm -f woody
 
 re: fclean all
