@@ -6,7 +6,7 @@
 /*   By: tberthie <tberthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/06 18:20:36 by tberthie          #+#    #+#             */
-/*   Updated: 2017/11/08 02:22:56 by tberthie         ###   ########.fr       */
+/*   Updated: 2017/11/08 02:35:54 by tberthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # include <sys/mman.h>
 # include <string.h>
 # include <unistd.h>
+# include <stdio.h>
 
 void		encrypt_data(void *map, size_t size, int woody);
 

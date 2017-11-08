@@ -6,7 +6,7 @@
 /*   By: tberthie <tberthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/06 18:20:09 by tberthie          #+#    #+#             */
-/*   Updated: 2017/11/08 02:23:18 by tberthie         ###   ########.fr       */
+/*   Updated: 2017/11/08 02:38:23 by tberthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int			main(int ac, char **av)
 	}
 	else if ((woody = open("woody", O_WRONLY | O_CREAT | O_TRUNC, 0755)) == -1)
 		ft_print(2, "%s%s%s: woody: %s\n", RED, av[0], EOC, strerror(errno));
-	else
+	else if (printf("\x1b[33mEncrypting %s (%lluo)\x1b[0m\n", av[1], size))
 		encrypt_data(map, (size_t)size, woody);
 	return (0);
 }
