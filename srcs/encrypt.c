@@ -14,15 +14,11 @@
 
 void		encrypt_data(void *map, size_t size, int woody)
 {
-	unsigned char	*data;
-	unsigned long	key;
+	char	*key;
 
-	data = (unsigned char*)map;
-	key = (unsigned long)map;
-
-//	char *args[3] = {"/usr/bin/gcc", "test.c", 0};
-//	syscall(SYS_execve, "/usr/bin/gcc", args, 0);
-
+	key = get_key();
+	// do the encryption
 	printf("\x1b[32mWoody file encrypted\x1b[0m\n");
-	printf("\x1b[33mKey_value: %lX\x1b[0m\n", key);
+	printf("\x1b[33mEncryption key: \n%s\x1b[0m\n", key);
+	free(key);
 }

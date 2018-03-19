@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-OBJS = $(addsuffix .o, $(addprefix objs/, main encrypt))
+OBJS = $(addsuffix .o, $(addprefix objs/, main encrypt key))
 
 NAME = woody_woodpacker
 
@@ -21,10 +21,10 @@ objs:
 
 $(NAME): $(OBJS)
 	make -C libft
-	gcc -o $(NAME) $(OBJS) libft/libft.a
+	clang -o $(NAME) $(OBJS) libft/libft.a
 
 objs/%.o: srcs/%.c
-	gcc -o $@ -c $< -I includes -I libft -Weverything
+	clang -o $@ -c $< -I includes -I libft -Weverything
 
 clean:
 	make -C libft clean
