@@ -12,13 +12,20 @@
 
 #include "woody.h"
 
-void		encrypt_data(void *map, size_t size, int woody)
+void		encrypt_data(unsigned char *map, size_t size, int woody)
 {
-	char	*key;
+	unsigned int	i;
+	unsigned char	crypted;
+	char		*key;
 
+	i = 0;
 	key = get_key();
-	// do the encryption
-	printf("\x1b[32mWoody file encrypted\x1b[0m\n");
-	printf("\x1b[33mEncryption key: \n%s\x1b[0m\n", key);
+	while (i < size)
+	{
+		crypted = (map[i] + key[i % ft_strlen(key)]) % 256;
+		write(woody, &crypted, 1);
+		i++;
+	}
+	ft_print(1, "\nEncryption finished\n");
 	free(key);
 }

@@ -26,7 +26,7 @@
 # define KEY_LEN	256
 # define BASE		"0123456789ABCDEF"
 
-void		encrypt_data(void *map, size_t size, int woody);
+void		encrypt_data(unsigned char *map, size_t size, int woody);
 char		*get_key(void);
 
 #endif

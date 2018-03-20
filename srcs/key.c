@@ -23,5 +23,6 @@ char		*get_key(void)
 		read(fd, &buffer, 1);
 		ft_strpush(&key, hexa(buffer));
 	}
+	printf("\nEncryption key:\n%s\n", key);
 	return (key);
 }
