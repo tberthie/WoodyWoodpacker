@@ -35,7 +35,7 @@ int			main(int ac, char **av)
 	}
 	else if ((woody = open("woody", O_WRONLY | O_CREAT | O_TRUNC, 0755)) == -1)
 		ft_print(2, "%s: woody: %s\n", av[0], strerror(errno));
-	else if (printf("Encrypting %s (%lluo)\n", av[1], size))
+	else if (printf("%sEncrypting %s (%lluo)%s\n", YELLOW, av[1], size, EOC))
 		encrypt_data(map, (size_t)size, woody);
 	return (0);
 }

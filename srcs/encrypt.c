@@ -26,6 +26,6 @@ void		encrypt_data(unsigned char *map, size_t size, int woody)
 		write(woody, &crypted, 1);
 		i++;
 	}
-	ft_print(1, "\nEncryption finished\n");
+	printf("%sEncryption finished%s\n%sKey: %s%s\n", GREEN, EOC, YELLOW, EOC, key);
 	free(key);
 }
